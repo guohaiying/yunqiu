@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.upyun:java-sdk:3.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.upyun/java-sdk/3.1/20fea4d8ed149c89ba511ee2864ed11f106acbb5/java-sdk-3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.upyun/java-sdk/3.1/95bc92ba311c044f5885c6c3b8f8b7970b6f3b47/java-sdk-3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <!-- 全局变量配置-->
+    <properties>
+        <!-- 存储路径 D:\\logs\\users -->
+        <property name="LOG_PATH">/var/local/yunqiu/league/logs</property>
+        <!--
+            日志格式:
+                %-5level 错误类型
+                [%t]执行的方法
+                %d{MM/dd HH:mm:ss,SSS}打印日期为月月/天天 小时：分：妙，毫秒
+                %c{2}.%M(%L)打印类名.方法（行数）
+                %m%n 打印具体的消息和回车。
+         -->
+        <property name="log.pattern">%-5level %d{MM/dd HH:mm:ss,SSS} [%t] %c{2}.%M(%L) %m%n</property>
+    </properties>
+
+    <Appenders>
+        <!-- 控制台输出控制 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="UTF-8" pattern="${log.pattern}" />
+        </Console>
+
+        <!-- 输出文本控制 -->
+        <RollingFile name="InfoLog" filename="${LOG_PATH}/info.log" filepattern="${LOG_PATH}/%d{yyyyMMddHHmmss}-info.zip">
+            <PatternLayout charset="GB18030" pattern="${log.pattern}" />
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+            <!--<Filters>
+                <ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="DENY"/>
+            </Filters>-->
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+        <RollingFile name="ErrorLog" filename="${LOG_PATH}/error.log" filepattern="${LOG_PATH}/%d{yyyyMMddHHmmss}-error.zip">
+            <PatternLayout charset="GB18030" pattern="${log.pattern}" />
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+
+        <RollingFile name="DebugLog" filename="${LOG_PATH}/debug.log" filepattern="${LOG_PATH}/%d{yyyyMMddHHmmss}-debug.zip">
+            <PatternLayout charset="GB18030" pattern="${log.pattern}" />
+            <SizeBasedTriggeringPolicy size="100 MB"/>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- 根结点配置 -->
+        <Root level="trace">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="InfoLog" level="info" />
+            <AppenderRef ref="ErrorLog" level="error" />
+            <AppenderRef ref="DebugLog" level="debug" />
+        </Root>
+    </Loggers>
+</Configuration>

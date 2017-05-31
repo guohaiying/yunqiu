@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: javax.xml.parsers:jaxp-api:1.4.5">
+    <CLASSES>
+      <root url="jar://D:/gradle-3.2.1/caches/modules-2/files-2.1/javax.xml.parsers/jaxp-api/1.4.5/a781fee7f90613acaac69315d8577073b7c420e8/jaxp-api-1.4.5.jar!/" />
+      <root url="jar://E:/gradle-3.2.1/caches/modules-2/files-2.1/javax.xml.parsers/jaxp-api/1.4.5/a781fee7f90613acaac69315d8577073b7c420e8/jaxp-api-1.4.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/gradle-3.2.1/caches/modules-2/files-2.1/javax.xml.parsers/jaxp-api/1.4.5/92400bd4da8a5943cf7f94885c1f04d379a1b80c/jaxp-api-1.4.5-sources.jar!/" />
+      <root url="jar://E:/gradle-3.2.1/caches/modules-2/files-2.1/javax.xml.parsers/jaxp-api/1.4.5/92400bd4da8a5943cf7f94885c1f04d379a1b80c/jaxp-api-1.4.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

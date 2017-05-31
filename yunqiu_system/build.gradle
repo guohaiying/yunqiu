@@ -1,0 +1,76 @@
+buildscript {
+    ext {
+        springBootVersion = '1.4.3.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'yunqiu_system'
+    version = '0.0.1-SNAPSHOT'
+}
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+}
+
+//清除上次的编译过的文件
+task clearPj(type:Delete){
+    delete 'build','target'
+}
+
+/*移除默认的日志*/
+configurations {
+    compile.exclude group:'ch.qos.logback'
+}
+
+dependencies{
+    /* spring boot */
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-aop')
+    compile('org.springframework.boot:spring-boot-starter-redis')
+    compile('org.springframework.boot:spring-boot-starter-web'){
+        exclude module: 'org.springframework.boot:spring-boot-starter-logging'
+    }
+    compile group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '1.1.1'
+    /*compile group: 'redis.clients', name: 'jedis', version: '2.8.2'*/
+    // mysql数据驱动
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.35'
+    // druid 数据库连接池
+    compile group: 'com.alibaba', name: 'druid', version: '1.0.27'
+    /* Json 工具包*/
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.8.0'
+    /* http请求 */
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+    compile group: 'org.apache.httpcomponents', name: 'httpcore', version: '4.4.5'
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+    compile group: 'commons-codec', name: 'commons-codec', version: '1.10'
+    compile group: 'commons-logging', name: 'commons-logging', version: '1.2'
+    /* log4j2日志包 */
+    compile('org.springframework.boot:spring-boot-starter-log4j2')
+    /* xml解析包*/
+    compile group: 'jdom', name: 'jdom', version: '1.1'
+    compile group: 'javax.xml.parsers', name: 'jaxp-api', version: '1.4.5'
+    /* spring boot 测试包*/
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Camden.BUILD-SNAPSHOT"
+    }
+}

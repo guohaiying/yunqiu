@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.springframework.cloud:spring-cloud-starter-ribbon:1.2.7.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://D:/gradle-3.2.1/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-ribbon/1.2.7.BUILD-SNAPSHOT/eba1b6b23afebd96cf371ff9be95182da6a3c02d/spring-cloud-starter-ribbon-1.2.7.BUILD-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://D:/gradle-3.2.1/caches/modules-2/files-2.1/org.springframework.cloud/spring-cloud-starter-ribbon/1.2.7.BUILD-SNAPSHOT/3575be9bfdae6d6f7f8abe98418f4a2c4eab79f0/spring-cloud-starter-ribbon-1.2.7.BUILD-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
